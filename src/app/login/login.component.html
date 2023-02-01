@@ -1,0 +1,42 @@
+<div class="con">
+  <h3>Veterinaria XYZ</h3>
+  <p>Acceder</p>
+</div>
+
+<div class="container">
+
+  <form [formGroup]="loginForm" class="form">
+
+    <div class="input">
+
+      <input type="email" placeholder=" correo" formControlName="email" required>
+
+
+      <!-- validaciones del campo-->
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+        class="alert alert-danger"> Este campo es requerido</div>
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
+        class="alert alert-danger">Este campo es un correo "@"</div>
+
+    </div>
+    <div class="input">
+      <input type="password" placeholder="password" formControlName="password" required>
+
+      <!-- Validaciones del campo -->
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+        class="alert alert-danger"> Este campo es requerido</div>
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
+        class="alert alert-danger"> numero de caracteres minimo 8</div>
+    </div>
+
+    <div class="button">
+      <button type="submit">entrar</button>
+    </div>
+
+
+
+
+  </form>
+
+
+</div>

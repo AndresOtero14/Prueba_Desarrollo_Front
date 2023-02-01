@@ -1,0 +1,37 @@
+
+
+.con{
+  text-align: center;
+  background-color: #03001C;
+  margin: 0 auto;
+  padding: 0 auto;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container{
+  background-color: #B6EADA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.form{
+margin: 0 auto;
+width: 300px;
+height: auto;
+background-color: #B6EADA;
+text-align: center;
+
+
+
+}
+
+.input{
+  padding: 20px;
+}
+
+.button{
+  padding: 20px;
+}
