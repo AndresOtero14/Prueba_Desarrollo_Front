@@ -1,0 +1,49 @@
+<div class="con">
+  <h3>Especies</h3>
+</div>
+
+<div class="container">
+  <form class="form" [formGroup]="myformular">
+  <div>
+    <input type="number" placeholder="id" formControlName="idespecie">
+  </div>
+  <div>
+    <input type="text" placeholder="nombre" formControlName="nombre">
+  </div>
+  <div>
+    <input type="number" placeholder="Raza" formControlName="fk_raza">
+  </div>
+  </form>
+
+  </div>
+
+
+<button class="lanzar-modal" mat-icon  mat-list-item>
+  Nuevo
+</button>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Aciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let index of especieVector">
+        <td>{{index.idespecie}}</td>
+        <td>{{index.nombre}}</td>
+        <td>{{index.fk_raza}}</td>
+        <td>
+          <button class="editar"  >Editar</button>
+          <button class="eliminar">Eliminar</button>
+
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

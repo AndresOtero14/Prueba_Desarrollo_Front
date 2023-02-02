@@ -1,0 +1,69 @@
+
+<div class="con">
+  <h3>Clientes</h3>
+
+</div>
+
+
+<div class="container">
+  <form class="form" [formGroup]="myFormulario">
+  <div>
+    <input type="number" placeholder="id" formControlName="idespecie">
+  </div>
+  <div>
+    <select name="" id="" formControlName="tipoid">
+     <option value="CC">CC</option>
+     <option value="CE">CE</option>
+      <option value="Passport">Pasaporte</option>
+    </select>
+  </div>
+  <div>
+    <input type="text" placeholder="nombre" formControlName="nombre">
+  </div>
+  <div>
+    <input type="text" placeholder="telefono" formControlName="telefono">
+  </div>
+  <div>
+    <input type="text" placeholder="ciudad" formControlName="ciudad">
+  </div>
+  <div>
+    <input type="text" placeholder="Direccion" formControlName="direccion">
+  </div>
+  </form>
+
+  </div>
+
+
+<button class="lanzar-modal" mat-icon  mat-list-item>
+  Nuevo
+</button>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo id</th>
+        <th>Nombre</th>
+        <th>Telefo</th>
+        <th>Ciudad</th>
+        <th>Direccion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let index of amoVector">
+        <td>{{index.idamo}}</td>
+        <td>{{index.tipoid}}</td>
+        <td>{{index.nombre}}</td>
+        <td>{{index.telefono}}</td>
+        <td>{{index.ciudad}}</td>
+        <td>{{index.direccion}}</td>
+        <td>
+          <button class="editar"  >Editar</button>
+          <button class="eliminar">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

@@ -1,0 +1,43 @@
+<div class="con">
+  <h3>Razas</h3>
+</div>
+
+<div class="con">
+<form class="form" [formGroup]="myformulario"  (ngSubmit)="guardar(myformulario)">
+<div>
+  <input type="number" placeholder="id" formControlName="idraza">
+</div>
+<div>
+  <input type="text" placeholder="nombre" formControlName="nombre">
+</div>
+<div>
+  <button   type="submit"  [disabled]="myformulario.invalid" mat-icon  mat-list-item>
+    Nuevo
+  </button>
+</div>
+
+</form>
+
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Aciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let index of razaVector">
+        <td>{{index.idraza}}</td>
+        <td>{{index.nombre}}</td>
+        <td>
+          <button class="editar"  >Editar</button>
+          <button class="eliminar">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

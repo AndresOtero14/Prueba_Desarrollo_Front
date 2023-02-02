@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PacienteComponent } from './paciente/paciente.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AmoComponent } from './amo/amo.component';
+import { EspecieComponent } from './especie/especie.component';
+import { RazaComponent } from './raza/raza.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     PacienteComponent,
+    AmoComponent,
+    EspecieComponent,
+    RazaComponent,
   ],
   imports: [
     BrowserModule,
