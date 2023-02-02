@@ -2,8 +2,8 @@
   <h3>Especies</h3>
 </div>
 
-<div class="container">
-  <form class="form" [formGroup]="myformular">
+<div class="formulario">
+  <form class="form" [formGroup]="myformular" (ngSubmit)="guardar(myformular)">
   <div>
     <input type="number" placeholder="id" formControlName="idespecie">
   </div>
@@ -13,14 +13,13 @@
   <div>
     <input type="number" placeholder="Raza" formControlName="fk_raza">
   </div>
+  <button class="lanzar-modal" type="submit" [disabled]="myformular.invalid" mat-icon  mat-list-item>
+    Nuevo
+  </button>
   </form>
 
   </div>
 
-
-<button class="lanzar-modal" mat-icon  mat-list-item>
-  Nuevo
-</button>
 
 <div class="container">
   <table class="table">
@@ -38,9 +37,7 @@
         <td>{{index.nombre}}</td>
         <td>{{index.fk_raza}}</td>
         <td>
-          <button class="editar"  >Editar</button>
-          <button class="eliminar">Eliminar</button>
-
+          <button class="editar"  (click)="editar(index)">Editar</button>
         </td>
       </tr>
     </tbody>

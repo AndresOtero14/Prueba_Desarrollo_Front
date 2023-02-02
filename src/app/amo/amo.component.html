@@ -5,14 +5,14 @@
 </div>
 
 
-<div class="container">
-  <form class="form" [formGroup]="myFormulario">
+<div class="formulario">
+  <form class="form" [formGroup]="myFormulario"  (ngSubmit)="guardar(myFormulario)">
   <div>
-    <input type="number" placeholder="id" formControlName="idespecie">
+    <input type="number" placeholder="id" formControlName="idamo">
   </div>
   <div>
-    <select name="" id="" formControlName="tipoid">
-     <option value="CC">CC</option>
+    <select name="tipoid" id="" formControlName="tipoid">
+     <option value="CC"  >CC</option>
      <option value="CE">CE</option>
       <option value="Passport">Pasaporte</option>
     </select>
@@ -29,14 +29,12 @@
   <div>
     <input type="text" placeholder="Direccion" formControlName="direccion">
   </div>
+  <button type="submit"  class="lanzar-modal" [disabled]="myFormulario.invalid"  mat-icon  mat-list-item>
+    Nuevo
+  </button>
   </form>
 
   </div>
-
-
-<button class="lanzar-modal" mat-icon  mat-list-item>
-  Nuevo
-</button>
 
 <div class="container">
   <table class="table">
@@ -59,8 +57,8 @@
         <td>{{index.ciudad}}</td>
         <td>{{index.direccion}}</td>
         <td>
-          <button class="editar"  >Editar</button>
-          <button class="eliminar">Eliminar</button>
+          <button class="editar" (click)="editar(index)" >Editar</button>
+
         </td>
       </tr>
     </tbody>

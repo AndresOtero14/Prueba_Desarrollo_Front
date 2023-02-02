@@ -2,7 +2,7 @@
   <h3>Razas</h3>
 </div>
 
-<div class="con">
+<div class="fomulario">
 <form class="form" [formGroup]="myformulario"  (ngSubmit)="guardar(myformulario)">
 <div>
   <input type="number" placeholder="id" formControlName="idraza">
@@ -17,7 +17,7 @@
 </div>
 
 </form>
-
+</div>
 
 <div class="container">
   <table class="table">
@@ -33,8 +33,8 @@
         <td>{{index.idraza}}</td>
         <td>{{index.nombre}}</td>
         <td>
-          <button class="editar"  >Editar</button>
-          <button class="eliminar">Eliminar</button>
+          <button class="editar" (click)="editar(index)" >Editar</button>
+
         </td>
       </tr>
     </tbody>

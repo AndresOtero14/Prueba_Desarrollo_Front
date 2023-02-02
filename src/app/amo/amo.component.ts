@@ -73,6 +73,17 @@ export class AmoComponent implements OnInit {
 
   }
 
+  editar(datos: { idamo: any; tipoid: any; nombre: any; telefono: any; ciudad: any; direccion: any }) {
+    this.myFormulario.setValue({
+      idamo: datos.idamo,
+      tipoid: datos.tipoid,
+      nombre: datos.nombre,
+      telefono: datos.telefono,
+      ciudad: datos.ciudad,
+      direccion: datos.direccion,
+    })
+
+  };
 
 
 

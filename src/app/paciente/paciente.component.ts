@@ -80,4 +80,16 @@ export class PacienteComponent implements OnInit {
 
 
 
+     editar(datos: {idpaciente: any;nombre:any; fechaNapaciente:any; fechaRegistro:any; fk_especie:any; fk_amo:any}){
+        this.myformulario.setValue({
+          idpaciente: datos.idpaciente,
+          nombre: datos.nombre,
+          fechaNapaciente: datos.fechaNapaciente,
+           fechaRegistro: datos.fechaRegistro,
+          fk_especie: datos.fk_especie,
+          fk_amo: datos.fk_amo,
+        })
+
+       };
+
 }

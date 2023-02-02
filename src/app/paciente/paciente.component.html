@@ -3,8 +3,8 @@
   <h3> Registro de Pacientes</h3>
 </div>
 
-<div class="container">
-  <form class="form" [formGroup]="myformulario">
+<div class="formulario">
+  <form class="form" [formGroup]="myformulario" (ngSubmit)="guardar(myformulario)">
   <div>
     <input type="number" placeholder="id" formControlName="idpaciente">
   </div>
@@ -16,7 +16,7 @@
 
   </div>
   <div>
-    <input type="date" placeholder="Fecha de registro" formControlName="fechaRegisto">
+    <input type="date" placeholder="Fecha de registro" formControlName="fechaRegistro">
   </div>
   <div>
 
@@ -26,13 +26,14 @@
   <div>
     <input type="number" placeholder="Dueño" formControlName="fk_amo">
   </div>
+  <button class="lanzar-modal" type="submit" [disabled]="myformulario.invalid"  mat-icon  mat-list-item>
+    Nuevo
+  </button>
   </form>
 
   </div>
 
-<button class="lanzar-modal" mat-icon  mat-list-item>
-  Nuevo
-</button>
+
 
 <div class="container">
   <table class="table">
@@ -56,9 +57,7 @@
         <td>{{index.fk_especie}}</td>
         <td>{{index.fk_amo}}</td>
         <td>
-          <button class="editar"  >Editar</button>
-          <button class="eliminar">Eliminar</button>
-
+          <button class="editar" (click)="editar(index)" >Editar</button>
         </td>
       </tr>
     </tbody>

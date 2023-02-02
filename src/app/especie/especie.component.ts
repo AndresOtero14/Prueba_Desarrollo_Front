@@ -68,4 +68,13 @@ export class EspecieComponent implements OnInit {
 
   }
 
+  editar(datos: {idespecie: any; nombre:any; fk_raza:any}){
+    this.myformular.setValue({
+        idraza: datos.idespecie,
+       nombre: datos.nombre,
+       fk_raza: datos.fk_raza,
+       })
+
+     };
+
 }
