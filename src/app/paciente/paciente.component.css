@@ -1,0 +1,35 @@
+.container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.table{
+  background-color: #AEE2FF;
+}
+
+th{
+  color: black;
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 25px;
+  padding: 15px;
+  font-weight: bold ;
+}
+
+.lanzar-modal{
+  background-color: rgba(71, 115, 178, 255);
+  border-radius: 0.5rem;
+  outline: none;
+  margin-top: 5%;
+  height: 3em;
+  margin-left: 80%;
+  display: inline-block;
+  position: sticky;
+  border-color: rgba(71, 115, 178, 255);
+  border-style: none;
+  color: white;
+  width: 12%;
+  text-align: left;
+  padding-left: 3%;
+}

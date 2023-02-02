@@ -1,15 +1,15 @@
 body{
-  background-color: #03001C;
+  background-color: #FEDEFF;
 }
 
 
 .navbar{
   text-align: center;
-  background-color: #5B8FB9;
+  background-color: #93C6E7;
 
   height: auto;
   width: auto;
-  color: white;
+  color: black;
 }
 
 
@@ -22,7 +22,7 @@ body{
 list-style: none;
 display: inline-block;
 padding: 18px;
-color: white;
+color: black;
 }
 
 .nav-li{
@@ -30,11 +30,30 @@ color: white;
   margin-top: 20px;
 }
 
+.nav-lia{
+  float: left;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+
 .a {
-  color: white;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   text-decoration: none;
   font-size: 20px;
   padding: 18px;
 }
+
+
+.am{
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left:  5px;
+}
+
+

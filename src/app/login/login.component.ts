@@ -10,6 +10,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
+  email: string;
+  password: string;
+
 
 
   constructor(private readonly fb: FormBuilder) { }
@@ -26,6 +29,11 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required, Validators.minLength(8)]
     })
+  }
+
+  login() {
+    console.log(this.email);
+    console.log(this.password);
   }
 
 }
