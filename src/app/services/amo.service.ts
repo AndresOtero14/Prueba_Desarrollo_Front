@@ -20,7 +20,7 @@ export class AmoService {
   }
 
   update(amo : Amo){
-    return this.servicio.put<Amo>(`${this.servidor}/raza/save`, amo.idamo);
+    return this.servicio.put<Amo>(`${this.servidor}/amo/update`, amo);
   }
 
   delete(id: number): Observable<any> {

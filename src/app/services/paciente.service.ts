@@ -17,7 +17,7 @@ export class PacienteService {
     return this.servicio.post<Paciente>(`${this.servidor}/paciente/save`, x);
   }
   update(paciente: Paciente){
-    return this.servicio.put<Paciente>(`${this.servidor}/paciente/save`, paciente.idpaciente);
+    return this.servicio.put<Paciente>(`${this.servidor}/paciente/update`, paciente);
   }
 
   delete(id: number): Observable<any> {

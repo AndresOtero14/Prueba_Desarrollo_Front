@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Paciente } from '../interfases/paciente';
 import { PacienteService } from '../services/paciente.service';
 
@@ -12,8 +12,8 @@ import { PacienteService } from '../services/paciente.service';
 })
 export class PacienteComponent implements OnInit {
   myformulario!:FormGroup;
-  Modal!: boolean;
-  filtroPost='';
+  //Modal!: boolean;
+  //filtroPost='';
 
   pacienteVector:Array<Paciente> = [];
 
@@ -26,15 +26,15 @@ export class PacienteComponent implements OnInit {
   ngOnInit(): void {
 
     this.myformulario= this.fb.group({
-      idpaciente :[''],
-      nombre: [''],
-      fechaNapaciente: [''],
-      fechaRegistro: [''],
-      fk_especie: [''],
-      fk_amo: ['']
+      idpaciente :['',[Validators.required]],
+      nombre: ['',[Validators.required]],
+      fechaNapaciente: ['',[Validators.required]],
+      fechaRegistro: ['',[Validators.required]],
+      fk_especie: ['',[Validators.required]],
+      fk_amo: ['',[Validators.required]]
     });
 
-
+    let arrayPaciente:Array<Paciente> = [];
     this.servicePaciente.getall().subscribe(datos=>{
       this.pacienteVector = datos.data;
     })
@@ -52,30 +52,40 @@ export class PacienteComponent implements OnInit {
   }
 
   refresh(){
-    let arrayRaza:Array<Paciente> = [];
+    let arrayPaciente:Array<Paciente> = [];
     this.servicePaciente.getall().subscribe(datos =>{
       this.pacienteVector = datos.data;
     })
   }
 
 
-  guardar(form: FormGroup){
-    if(this.myformulario.valid){
-      if(form.value.idpaciente && form.value.fk_amo !== 0){
-        this.actualizar(form);
-        return;
-      }
-      this.servicePaciente.create(form.value)
-      .subscribe(dato =>{
+  guardar(form: FormGroup) {
+    this.servicePaciente.create(form.value)
+      .subscribe(dato => {
         alert("Se guardo con exito");
         this.myformulario.reset();
         this.refresh();
-      })
-    }else{
-      alert("Formulario Invalido")
-    }
-
+      });
   }
+
+
+  // guardar(form: FormGroup){
+  //   if(this.myformulario.valid){
+  //     if(form.value.idpaciente && form.value.fk_amo !== 0){
+  //       this.actualizar(form);
+  //       return;
+  //     }
+  //     this.servicePaciente.create(form.value)
+  //     .subscribe(dato =>{
+  //       alert("Se guardo con exito");
+  //       this.myformulario.reset();
+  //       this.refresh();
+  //     })
+  //   }else{
+  //     alert("Formulario Invalido")
+  //   }
+
+  // }
 
 
 

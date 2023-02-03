@@ -48,7 +48,7 @@ export class AmoComponent implements OnInit {
   }
 
   refresh(){
-    let arrayRaza:Array<Amo> = [];
+    let arrayAmo:Array<Amo> = [];
     this.serviceAmo.getall().subscribe(datos =>{
       this.amoVector = datos.data;
     })
@@ -56,22 +56,32 @@ export class AmoComponent implements OnInit {
 
 
   guardar(form: FormGroup){
-    if(this.myFormulario.valid){
-      if(form.value.idamo && form.value.nombre && form.value.tipoid !== 0){
-        this.actualizar(form);
-        return;
-      }
-      this.serviceAmo.create(form.value)
+  this.serviceAmo.create(form.value)
       .subscribe(dato =>{
         alert("Se guardo con exito");
         this.myFormulario.reset();
         this.refresh();
-      })
-    }else{
-      alert("Formulario Invalido")
+      });
+
     }
 
-  }
+  // guardar(form: FormGroup){
+  //   if(this.myFormulario.valid){
+  //     if(form.value.idamo && form.value.nombre && form.value.tipoid !== 0){
+  //       this.actualizar(form);
+  //       return;
+  //     }
+  //     this.serviceAmo.create(form.value)
+  //     .subscribe(dato =>{
+  //       alert("Se guardo con exito");
+  //       this.myFormulario.reset();
+  //       this.refresh();
+  //     })
+  //   }else{
+  //     alert("Formulario Invalido")
+  //   }
+
+  // }
 
   editar(datos: { idamo: any; tipoid: any; nombre: any; telefono: any; ciudad: any; direccion: any }) {
     this.myFormulario.setValue({

@@ -29,9 +29,17 @@
   <div>
     <input type="text" placeholder="Direccion" formControlName="direccion">
   </div>
-  <button type="submit"  class="lanzar-modal" [disabled]="myFormulario.invalid"  mat-icon  mat-list-item>
-    Nuevo
-  </button>
+  <div>
+    <button type="submit"  class="boton" [disabled]="myFormulario.invalid"  mat-icon  mat-list-item>
+      Nuevo
+    </button>
+  </div>
+  <div>
+    <button  class="actualizar" (click)="actualizar(myFormulario)" [disabled]="myFormulario.invalid"  mat-icon  mat-list-item>
+      Actualizar
+    </button>
+  </div>
+
   </form>
 
   </div>
@@ -46,6 +54,7 @@
         <th>Telefo</th>
         <th>Ciudad</th>
         <th>Direccion</th>
+        <th>Aciones</th>
       </tr>
     </thead>
     <tbody>

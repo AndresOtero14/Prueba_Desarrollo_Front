@@ -6,7 +6,7 @@
 <div class="formulario">
   <form class="form" [formGroup]="myformulario" (ngSubmit)="guardar(myformulario)">
   <div>
-    <input type="number" placeholder="id" formControlName="idpaciente">
+    <input type="number" placeholder="idpaciente" formControlName="idpaciente">
   </div>
   <div>
     <input type="text" placeholder="nombre" formControlName="nombre">
@@ -28,13 +28,13 @@
   </div>
 
   <div>
-    <button class="boton" type="submit" [disabled]="myformulario.invalid"  mat-icon  mat-list-item>
+    <button  type="submit"  class="boton" [disabled]="myformulario.invalid"  mat-icon  mat-list-item>
       Nuevo
     </button>
   </div>
 
   <div>
-    <button class="actualizar"  [disabled]="myformulario.invalid"  mat-icon  mat-list-item>
+    <button class="actualizar" (click)="actualizar(myformulario)" [disabled]="myformulario.invalid"  mat-icon  mat-list-item>
       Actualizar
     </button>
   </div>
