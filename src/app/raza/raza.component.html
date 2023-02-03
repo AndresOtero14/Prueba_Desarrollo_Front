@@ -11,9 +11,12 @@
   <input type="text" placeholder="nombre" formControlName="nombre">
 </div>
 <div>
-  <button   type="submit"  [disabled]="myformulario.invalid" mat-icon  mat-list-item>
+  <button class="boton"  type="submit"  [disabled]="myformulario.invalid" mat-icon  mat-list-item>
     Nuevo
   </button>
+</div>
+<div >
+  <button class="actualizar" (click)="actualizar(myformulario)" >Actualizar</button>
 </div>
 
 </form>
@@ -34,6 +37,8 @@
         <td>{{index.nombre}}</td>
         <td>
           <button class="editar" (click)="editar(index)" >Editar</button>
+
+
 
         </td>
       </tr>

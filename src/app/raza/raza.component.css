@@ -33,7 +33,12 @@ th{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 25px;
   padding: 15px;
-  font-weight: bold ;
+  font-weight: bold #03001C;
+}
+
+td{
+  margin-top: 50px;
+  border-radius: 4px solid ;
 }
 
 
@@ -42,7 +47,7 @@ th{
   background-color: #AEE2FF;
   width: 50px;
   height: 40px;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -56,6 +61,28 @@ th{
 
 .form{
   justify-content: center;
-  display: flex;
+  display:flex;
   padding: 10px;
+}
+
+
+.boton{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.actualizar{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.editar{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

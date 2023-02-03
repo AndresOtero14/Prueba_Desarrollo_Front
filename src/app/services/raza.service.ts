@@ -19,7 +19,7 @@ export class RazaService {
   }
 
 update(raza : Raza){
-  return this.servicio.post<Raza>(`${this.servidor}/raza/save`, raza.idraza);
+  return this.servicio.put<Raza>(`${this.servidor}/raza/update`,raza);
 }
 
   delete(id: number): Observable<any> {

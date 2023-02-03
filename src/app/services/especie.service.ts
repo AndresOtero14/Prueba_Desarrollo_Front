@@ -18,7 +18,7 @@ export class EspecieService {
   }
 
   update(especie : Especie){
-    return this.servicio.put<Especie>(`${this.servidor}/especie/update`, especie.idespecie);
+    return this.servicio.put<Especie>(`${this.servidor}/especie/update`, especie);
   }
   delete(id: number): Observable<any> {
     return this.servicio.get(`${this.servidor}/especie/delete/${id}`);

@@ -34,8 +34,9 @@ export class RazaComponent implements OnInit {
   actualizar(form:FormGroup){
     this.serviceRaza.update(form.value)
     .subscribe(datos =>{
-      alert("Se  actualizo con exito")
+      alert("Se  actualizo con exito");
       this.refresh();
+
     });
   }
 
@@ -46,24 +47,33 @@ export class RazaComponent implements OnInit {
     })
   }
 
-
   guardar(form: FormGroup){
-    if(this.myformulario.valid){
-      if(form.value.idraza && form.value.nombre !== 0){
-        this.actualizar(form);
-        return;
-      }
-      this.serviceRaza.create(form.value)
+    this.serviceRaza.create(form.value)
       .subscribe(datos =>{
         alert("Se guardo con exito");
         this.myformulario.reset();
         this.refresh();
-      })
-    }else{
-      alert("Formulario Invalido")
-    }
-
+      });
   }
+
+
+  // guardar(form: FormGroup){
+  //   if(this.myformulario.valid){
+  //     if(form.value.idraza && form.value.nombre !== 0){
+  //       this.actualizar(form);
+  //       return;
+  //     }
+  //     this.serviceRaza.create(form.value)
+  //     .subscribe(datos =>{
+  //       alert("Se guardo con exito");
+  //       this.myformulario.reset();
+  //       this.refresh();
+  //     })
+  //   }else{
+  //     alert("Formulario Invalido")
+  //   }
+
+  // }
 
 
 editar(datos: {idraza: any; nombre:any}){

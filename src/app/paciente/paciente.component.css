@@ -63,3 +63,23 @@ th{
   padding: 10px;
 }
 
+.boton{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.actualizar{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.editar{
+  margin-left: 4px;
+  background-color: #03001C;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

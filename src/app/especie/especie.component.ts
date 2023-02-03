@@ -50,27 +50,37 @@ export class EspecieComponent implements OnInit {
   }
 
   guardar(form: FormGroup) {
-    if (this.myformular.valid) {
-      if (form.value.idespecie && form.value.nombre && form.value.fk_raza !== 0) {
-        this.actualizar(form);
-        return;
-      }
-      this.serviceEspecie.create(form.value)
-        .subscribe(dato => {
-          alert("Se guardo con exito");
-          this.myformular.reset();
-          this.refresh();
-        })
-    } else {
-      alert("Formulario Invalido")
-    }
-
+    this.serviceEspecie.create(form.value)
+      .subscribe(dato => {
+        alert("Se guardo con exito");
+        this.myformular.reset();
+        this.refresh();
+      });
 
   }
 
+  // guardar(form: FormGroup) {
+  //   if (this.myformular.valid) {
+  //     if (form.value.idespecie && form.value.nombre && form.value.fk_raza !== 0) {
+  //       this.actualizar(form);
+  //       return;
+  //     }
+  //     this.serviceEspecie.create(form.value)
+  //       .subscribe(dato => {
+  //         alert("Se guardo con exito");
+  //         this.myformular.reset();
+  //         this.refresh();
+  //       })
+  //   } else {
+  //     alert("Formulario Invalido")
+  //   }
+
+
+  // }
+
   editar(datos: {idespecie: any; nombre:any; fk_raza:any}){
     this.myformular.setValue({
-        idraza: datos.idespecie,
+        idespecie: datos.idespecie,
        nombre: datos.nombre,
        fk_raza: datos.fk_raza,
        })
